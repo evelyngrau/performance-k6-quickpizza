@@ -1,7 +1,7 @@
 # API Performance Testing with Grafana k6
 
 <p align="center">
-  <a href="https://evelyngrau.github.io/k6-api-performance-testing/reports/k6-report.html">
+  <a href="https://evelyngrau.github.io/performance-k6-quickpizza/reports/k6-report.html">
     <img
       src="https://img.shields.io/badge/View%20HTML%20Report-k6-7D64FF?style=for-the-badge&logo=k6"
       alt="View k6 HTML Report"
@@ -99,7 +99,7 @@ The complete report includes:
 - Threshold results
 - Network usage
 
-[Open the complete k6 HTML report](https://evelyngrau.github.io/k6-api-performance-testing/reports/k6-report.html)
+[Open the complete k6 HTML report](https://evelyngrau.github.io/performance-k6-quickpizza/reports/k6-report.html)
 
 ## Project Structure
 
