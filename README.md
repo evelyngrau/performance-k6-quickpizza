@@ -10,24 +10,29 @@
     alt="Grafana k6"
   />
   <img
-    src="https://img.shields.io/badge/Test-Average%20Load-blue?style=flat-square"
+    src="https://img.shields.io/badge/Test-Average%20Load-2563EB?style=flat-square"
     alt="Average load test"
   />
   <img
-    src="https://img.shields.io/badge/Max%20VUs-5-success?style=flat-square"
-    alt="Maximum 5 virtual users"
-  />
-  <img
-    src="https://img.shields.io/badge/Report-HTML-orange?style=flat-square"
-    alt="HTML report"
+    src="https://img.shields.io/badge/Maximum%20VUs-5-16A34A?style=flat-square"
+    alt="Maximum five virtual users"
   />
 </p>
 
 <p align="center">
-  <a href="https://evelyngrau.github.io/performance-k6-quickpizza/">
+  <a href="./reports/k6-performance-report.pdf">
     <img
-      src="https://img.shields.io/badge/OPEN%20FULL%20PERFORMANCE%20REPORT-7D64FF?style=for-the-badge&logo=k6&logoColor=white"
-      alt="Open full k6 performance report"
+      src="https://img.shields.io/badge/VIEW%20FULL%20PDF%20REPORT-7D64FF?style=for-the-badge&logo=adobeacrobatreader&logoColor=white"
+      alt="View full PDF report"
+    />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/evelyngrau/performance-k6-quickpizza/raw/refs/heads/main/reports/k6-report.html">
+    <img
+      src="https://img.shields.io/badge/DOWNLOAD%20INTERACTIVE%20HTML-111827?style=for-the-badge&logo=html5&logoColor=white"
+      alt="Download interactive HTML report"
     />
   </a>
 </p>
@@ -38,4 +43,4 @@
 
 This project demonstrates an API performance testing workflow using
 **Grafana k6**, including workload modelling, functional checks,
-performance thresholds, result analysis, and HTML reporting.
+performance thresholds, result interpretation, and professional reporting.
