@@ -2,6 +2,15 @@
   <img src="assets/banner.png" alt="QuickPizza API Performance Testing with Grafana k6" width="100%">
 </p>
 
+<p align="center">
+  <a href="https://github.com/evelyngrau/performance-k6-quickpizza/actions/workflows/k6-performance-test.yml">
+    <img
+      src="https://github.com/evelyngrau/performance-k6-quickpizza/actions/workflows/k6-performance-test.yml/badge.svg"
+      alt="k6 Performance Test"
+    />
+  </a>
+</p>
+
 # QuickPizza API Performance Testing with Grafana k6
 
 A compact API performance testing project created to practise workload modelling, functional validation, automated thresholds, result analysis, and professional reporting with **Grafana k6**.
@@ -106,6 +115,38 @@ responseBody.names.length > 0
 This was a test-script issue rather than a performance defect in the API.
 
 It reinforces an important testing principle: assertions must be based on the real API contract, and failed checks must be investigated before reporting a product defect.
+
+## CI/CD Pipeline
+
+The project includes a GitHub Actions workflow that executes the k6 test
+automatically.
+
+The workflow runs:
+
+- Manually through `workflow_dispatch`.
+- When performance test scripts are pushed to `main`.
+- When a pull request modifies files inside the `tests` directory.
+
+The pipeline:
+
+1. Checks out the repository.
+2. Installs Grafana k6.
+3. Executes the QuickPizza performance test.
+4. Evaluates the configured thresholds.
+5. Generates an HTML report.
+6. Uploads the report as a downloadable workflow artifact.
+
+A threshold breach causes the workflow to fail, allowing the test to operate as
+an automated performance quality gate.
+
+### Downloading the CI Report
+
+1. Open the repository's **Actions** tab.
+2. Select a completed `k6 Performance Test` execution.
+3. Scroll to the **Artifacts** section.
+4. Download `quickpizza-k6-performance-report`.
+5. Extract and open `k6-ci-report.html` in Chrome or Edge.
+
 
 ## Reports
 
