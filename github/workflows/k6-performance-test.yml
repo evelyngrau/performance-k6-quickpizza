@@ -1,0 +1,48 @@
+name: k6 Performance Test
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+    paths:
+      - "tests/**"
+      - ".github/workflows/k6-performance-test.yml"
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "tests/**"
+
+jobs:
+  performance-test:
+    name: Run QuickPizza Load Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install k6
+        uses: grafana/setup-k6-action@v1
+
+      - name: Create reports directory
+        run: mkdir -p reports
+
+      - name: Run k6 test and generate HTML report
+        env:
+          K6_WEB_DASHBOARD: "true"
+          K6_WEB_DASHBOARD_EXPORT: "reports/k6-ci-report.html"
+        run: |
+          k6 run tests/quickpizza-load-test.js
+
+      - name: Upload k6 HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quickpizza-k6-performance-report
+          path: reports/k6-ci-report.html
+          if-no-files-found: warn
+          retention-days: 14
